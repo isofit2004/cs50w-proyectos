@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ name }}
+{% endblock %}
+
+{% block body %}
+{{cuerpo|safe}}
+
+{{ name }}
+
+<a href="{% url 'enc:editar' name %}">
+    Edit
+
+    </a>
+{% endblock %}
