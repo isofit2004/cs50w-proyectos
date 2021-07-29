@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+
+ </head>
+<body>
+ <div container-fluid>
+  <!-- primera fila de nav bar y logo google -->
+   <div class="row"> 
+    <!-- primera columana de 11 donde va el logo -->
+    <div id="logo" class="col-lg-11">
+     <a href="./index.html"><img src="./google-advanced.png" alt="imagen google"></a>
+    </a>
+    </div>
+    <!-- segunda columna de 1 donde va el index -->
+    <div id="divdeindex" class="col-lg-1">
+    <ul class="nav justify-content-end">
+     <li class="nav-item">
+      <a class="nav-link" href="./index.html">Index</a>
+     </li>
+    </ul>
+    </div>
+   </div>
+    </div>
+    <!-- segunda fila: advanced search -->
+    <div id= "segundafila" class="row">
+     <div class="col-lg-12">
+      <h4>Advanced Search</h4>
+     </div>
+    </div>
+
+    <!-- tercera fila: Find pages: -->
+    <div class="row" id="tercerafila">
+    
+    <div class="col-lg-7">
+     <h4 id="findpages">Find pages with...</h4>
+    </div>
+    <div class="col-lg-5">
+      <h5 id="todo">To do this in the search box.</h5>
+    </div>
+    </div>
+   
+<!-- filas de 4 a 7 -->
+
+<div id="filas4a7">
+
+ <form action="https://google.com/search">
+
+
+ <div class="row">
+  <div class="col-lg-3">
+   <h5>all these words</h5>
+  </div>
+  <div class="col-lg-4">
+   <input class="largo" type="text" name="as_q">
+  </div>
+  <div class="col-lg-5">
+   <h6>Type de important words: tri-colour rat terrier</h6>
+  </div>
+ </div>
+ <!-- 5 -->
+ <div class="row">
+  <div class="col-lg-3">
+   <h5>this exact word or phrase:</h5>
+  </div>
+  <div class="col-lg-4" class="largo">
+   <input type="text" class="largo" name="as_epq" >
+  
+  </div>
+  <div class="col-lg-5">
+   <h6>Put exact words in quotes: "rat terrier"</h6>
+  </div>
+ </div>
+  <!-- 6 -->
+ <div class="row">
+  <div class="col-lg-3">
+   <h5>any of these words:</h5>
+  </div>
+  <div class="col-lg-4">
+   <input type="text" class="largo" name="as_oq">
+  </div>
+  <div class="col-lg-5">
+   <h6>Type OR between all the words you want: miniature OR standard</h6>
+  </div>
+ </div>
+  <!-- 7 -->
+ <div class="row">
+  <div class="col-lg-3">
+   <h5>none of these words:</h5>
+  </div>
+  <div class="col-lg-4"> 
+   <input type="text" class="largo" name="as_eq">
+  </div>
+  <div class="col-lg-5">
+   <h6>Put a minus sign just before words that you don't want: -rodent, -"Jack Russell"</h6>
+  </div>
+ </div>
+<!-- boton para enviar -->
+<div id="boton">
+ <div class="row">
+  <div class="col-lg-3">
+  </div>
+  <div class="col-lg-4 d-flex justify-content-end"> 
+   <input type="submit" class="btn btn-primary" value="Advaced Search">
+  </div>
+  <div class="col-lg-5">
+  </div>
+ </div>
+</div>
+ 
+
+ 
+
+</form>
+ </div>
+
+
+  
+
+
+
+
+</body>

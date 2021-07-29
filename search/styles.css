@@ -1,0 +1,116 @@
+* {
+ box-sizing: border-box;
+}
+
+#imagen {
+ margin: 100px;
+ margin-bottom: 45px;
+}
+
+#principal {
+ /* background-color: lightcoral; */
+ /* margin: auto; */
+ margin-top: 15px;
+}
+
+#botones{
+ /* display: inline-block; */
+ display: flex;
+ justify-content: center;
+ }
+ .btnn {
+  margin: 10px;
+  width: 150px;
+  border-radius: 25px;
+ }
+
+ #barra-search{
+  border: 1px solid grey;
+  width: 700px;
+  height: 40px;
+  border-radius: 25px;
+ }
+
+ #barra-search-2{
+  border: 1px solid grey;
+  width: 500px;
+  height: 40px;
+  border-radius: 25px;
+  margin-bottom: 25px;
+ }
+
+ #logo {
+  padding: 25px;
+  padding-left: 35px;
+  }
+
+  #divdeindex {
+   display: flex;
+   align-items: center;
+  }
+
+  #segundafila {
+   height: 90px;
+   border-bottom: rgb(190, 186, 186) solid 1px;
+   color: red;
+   padding-bottom: 40px;
+   margin-bottom: 50px;
+  }
+
+  #tercerafila {
+   font-size: small;
+   padding-left: 0px;
+  }
+
+  #tercerafila .col-lg-7, .col-lg-3, #segundafila h4 {
+   /* background-color:khaki; */
+   padding-left: 50px;
+   /* font-size: 12px; */
+  }
+
+  .largo{
+   width: 100%;
+   padding-left: -50px;
+  }
+
+#findpages{
+ font-size: large;
+}
+#todo{
+ font-size: 14px;
+ font-weight: bold;
+ color: grey;
+ /* background-color: hotpink; */
+ padding-left: 0px;
+}
+ 
+#filas4a7 .row {
+ margin-top: 20px;
+}
+
+#filas4a7 h5 {
+ font-size: 15px;
+}
+ 
+#filas4a7 h6{
+ font-size: 12px;
+ display: flex;
+ text-align: center;
+}
+
+#boton {
+ margin-top: 25px;
+}
+
+#boton input {
+ width: 150px;
+ 
+}
+
+
+
+
+
+
+
+
