@@ -1,0 +1,37 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Create entry</h1>
+
+    <form method="POST">
+        {% csrf_token%}
+        <div class="row">
+            <div class="col-lg-2">
+                <label for="titulo">Escriba el nombre:</label>
+            </div>
+            <div class="col-lg-10">
+                <input id="titulo"type="text" name="titulo"> 
+            </div>        
+        </div>
+
+        <div class="row">
+            <div class="col-lg-2">
+                <label for="area">Escriba el texto</label>
+            </div>
+            <div class="col-lg-10">
+                <textarea name="texto" id="create" cols="30" rows="5"></textarea>
+            </div>        
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <input class="btn btn-primary" type="submit" value="Editar" id="btn-editar">
+            </div>
+        </div>
+    </form>
+
+
+{% endblock %}
