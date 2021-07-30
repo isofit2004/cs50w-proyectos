@@ -57,8 +57,18 @@ function load_mailbox(mailbox) {
 
   // Show the mailbox name
   document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
-}
 
+  // fetch para la api de las bases de todos los mails de un box (inbox, sent, archived)
+
+  fetch(`emails/${mailbox}`)
+  .then(response => response.json())
+  .then(emails => {
+    //print emails
+    console.log(emails);
+    document.querySelector("#emails-view").innerHTML = emails;
+  }
+  )
+}
 
 
 
