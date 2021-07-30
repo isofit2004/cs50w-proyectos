@@ -28,6 +28,9 @@ function compose_email() {
 
 
   document.querySelector('#compose-form').onsubmit = () => {
+
+    //console.log(document.querySelector('#compose-recipients').value);
+
     fetch('/emails', {
       method: 'POST',
       body: JSON.stringify({
@@ -36,8 +39,9 @@ function compose_email() {
           body: document.querySelector('#compose-body').value
       })
     })
-    .then(response => response.json())
-    .then(() => {
+    .then(response => response.json() )
+    .then(result => {
+        console.log(result);
         load_mailbox('sent');
     });
     return false;
