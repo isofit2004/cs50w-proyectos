@@ -90,23 +90,60 @@ function load_mailbox(mailbox) {
           emailDiv.style.background = "gray"
         }
 
-
+        emailDiv.addEventListener("click", () => {
+          console.log(`el event listener de: ${email.id}`)
+          cargar_mail(email.id)
+        })
+      
         document.querySelector("#emails-view").append(emailDiv)
         console.log(email)
 
       }
 
-      /*codigo antiguo para probar
-      const element = document.createElement("div");
-      element.innerHTML = `El sender: ${emails[0].sender}` 
-      // x.innerHTML = `El sender: ${emails[0].body}` condigo primero para ver que aparece y lanza 
-      // el fetch
-      x.append(element) 
-      */
     }
 
       } 
     )
+  }
+
+  function cargar_mail(x) {
+    fetch(`/emails/${x}`)
+    .then(response => response.json())
+    .then(email => {
+        // Print email
+        console.log(email);
+
+        // Your application should show the email’s sender, recipients, 
+        //subject, timestamp, and body.
+
+        //primero se deja solo la vista nueva
+            
+        document.querySelector('#emails-view').style.display = 'none';
+        document.querySelector('#compose-view').style.display = 'none';
+        document.querySelector('#show_mail-view').style.display = 'block';
+        
+        //crear los campos para que se muestren
+        const m_sen = document.createElement("div")
+        const m_rec = document.createElement("div")
+        const m_sub = document.createElement("div")
+        const m_tim = document.createElement("div")
+        const m_bod = document.createElement("div")
+
+        //poblar los campos con la info de la devolucion del fetch
+
+        m_sen.innerHTML = email.sender
+        m_rec.innerHTML = email.recipients
+        m_sub.innerHTML = email.subject
+        m_tim.innerHTML = email.timestamp
+        m_bod.innerHTML = email.body
+
+        //insertar en el div grande
+        let agregar = document.querySelector("#show_mail-view").appendChild(m_sen)
+        
+
+        
+        
+});
   }
   
   
