@@ -65,7 +65,8 @@ function load_mailbox(mailbox) {
   .then(emails => {
     //print emails
     console.log(emails);
-    document.querySelector("#emails-view").innerHTML = emails[0].sender;
+    alert("hola");
+
   }
   )
 }
