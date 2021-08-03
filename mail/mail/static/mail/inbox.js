@@ -64,12 +64,25 @@ function load_mailbox(mailbox) {
   .then(response => response.json())
   .then(emails => {
     //print emails
-    console.log(emails);
-    alert("hola");
 
+    const x = document.querySelector("#emails-view");
+    console.log(emails.length)
+    
+
+    if (emails.length == 0) {
+      x.innerHTML = "No hay correos en la bandeja" 
+
+    }
+    else {
+      x.innerHTML = `El sender: ${emails[0].body}`
+    }
+
+    } 
+    )
   }
-  )
-}
+  
+  
+
 
 
 
