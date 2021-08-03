@@ -67,17 +67,45 @@ function load_mailbox(mailbox) {
 
     const x = document.querySelector("#emails-view");
     console.log(emails.length)
-    
 
+    
     if (emails.length == 0) {
-      x.innerHTML = "No hay correos en la bandeja" 
+      x.innerHTML = `No hay correos en la bandeja: ${mailbox}`
 
     }
     else {
-      x.innerHTML = `El sender: ${emails[0].body}`
+
+      /*lo que tengo que hacer es iterar primero por los mails, al tener el primer mail, tengo
+      que crear su div y en su div hay al div hay que darle formato y así para abajo. */
+
+      for (let email of emails) {
+        const emailDiv = document.createElement("div")
+        emailDiv.innerHTML += email.sender
+        emailDiv.innerHTML += email.subject
+        emailDiv.innerHTML += email.timestamp
+
+        if (email.read == "false") {
+          emailDiv.style.background = "white"
+        } else {
+          emailDiv.style.background = "gray"
+        }
+
+
+        document.querySelector("#emails-view").append(emailDiv)
+        console.log(email)
+
+      }
+
+      /*codigo antiguo para probar
+      const element = document.createElement("div");
+      element.innerHTML = `El sender: ${emails[0].sender}` 
+      // x.innerHTML = `El sender: ${emails[0].body}` condigo primero para ver que aparece y lanza 
+      // el fetch
+      x.append(element) 
+      */
     }
 
-    } 
+      } 
     )
   }
   

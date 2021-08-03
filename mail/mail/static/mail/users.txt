@@ -1,3 +1,6 @@
 Username: admin
 Email address: admin@ex.cl
 pass: 1
+
+f.r@ex.com 
+1
