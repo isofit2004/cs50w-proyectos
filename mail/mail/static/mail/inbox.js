@@ -21,6 +21,7 @@ function compose_email() {
   // Show compose view and hide other views
   document.querySelector('#emails-view').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'block';
+  document.querySelector('#show_mail-view').style.display = 'none';
 
   // Clear out composition fields
   document.querySelector('#compose-recipients').value = "";
@@ -54,6 +55,7 @@ function load_mailbox(mailbox) {
   // Show the mailbox and hide other views
   document.querySelector('#emails-view').style.display = 'block';
   document.querySelector('#compose-view').style.display = 'none';
+  document.querySelector('#show_mail-view').style.display = 'none';
 
   // Show the mailbox name
   document.querySelector('#emails-view').innerHTML = `<h3>${mailbox.charAt(0).toUpperCase() + mailbox.slice(1)}</h3>`;
@@ -89,20 +91,19 @@ function load_mailbox(mailbox) {
         } else {
           emailDiv.style.background = "gray"
         }
+     
+     // con este se agregan los nuevos mail al mailbox que correponda
+        document.querySelector("#emails-view").append(emailDiv)
+        console.log(email)
 
+        //con este se muestra el mail en específico
         emailDiv.addEventListener("click", () => {
           console.log(`el event listener de: ${email.id}`)
           cargar_mail(email.id)
         })
-      
-        document.querySelector("#emails-view").append(emailDiv)
-        console.log(email)
-
       }
-
-    }
-
-      } 
+     }
+    } 
     )
   }
 
@@ -131,20 +132,32 @@ function load_mailbox(mailbox) {
 
         //poblar los campos con la info de la devolucion del fetch
 
-        m_sen.innerHTML = email.sender
-        m_rec.innerHTML = email.recipients
-        m_sub.innerHTML = email.subject
-        m_tim.innerHTML = email.timestamp
-        m_bod.innerHTML = email.body
+        m_sen.innerHTML = `Enviado:  ${email.sender}`
+        m_rec.innerHTML = `Recibido: ${email.recipients}`
+        m_sub.innerHTML = `Asunto: ${email.subject}`
+        m_tim.innerHTML = `Fecha: ${email.timestamp}`
+        m_bod.innerHTML = `Mensaje: ${email.body}`
 
         //insertar en el div grande
         let agregar = document.querySelector("#show_mail-view").appendChild(m_sen)
-        
+        agregar += document.querySelector("#show_mail-view").appendChild(m_rec)
+        agregar += document.querySelector("#show_mail-view").appendChild(m_sub)
+        agregar += document.querySelector("#show_mail-view").appendChild(m_tim)
+        agregar += document.querySelector("#show_mail-view").appendChild(m_bod)
 
+        //los event listener para cuando se quiera navegar por los togles 
         
         
-});
-  }
+        // Use buttons to toggle between views
+        document.querySelector('#inbox').addEventListener('click', () => {
+          load_mailbox('inbox')});
+        
+        document.querySelector('#sent').addEventListener('click', () => load_mailbox('sent'));
+        document.querySelector('#archived').addEventListener('click', () => load_mailbox('archive'));
+        document.querySelector('#compose').addEventListener('click', compose_email);
+        
+        });
+        }
   
   
 
